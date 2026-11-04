@@ -1,5 +1,14 @@
-import TodoListItem from './TodoListItem.jsx';
+function TodoListItem({ todo, onCompleteTodo }) {
+  return (
+    <li>
+      <input
+        type="checkbox"
+        checked={todo.isCompleted}
+        onChange={() => onCompleteTodo(todo.id)}
+      />
+      {todo.title}
+    </li>
+  );
+}
 
-{todoList.map(todo => (
-  <TodoListItem key={todo.id} todo={todo} />
-))}
+export default TodoListItem;
